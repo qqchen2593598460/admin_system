@@ -56,7 +56,7 @@
                          sessionStorage.setItem('user', JSON.stringify(this.formLogin.user));
                          if (valid) {
                              this.$Message.success('登录成功');
-                             this.$router.push({path: '/main'});
+                             this.$router.push({path: '/newData'});
                          } else {
                              this.$Message.error('登录失败');
                          }

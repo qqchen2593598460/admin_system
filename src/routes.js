@@ -1,9 +1,9 @@
 
 import Login from './pages/Login.vue'
 import Home from './pages/Home.vue'
-import Table from './pages/nav_table/Table.vue'
-import Main from './pages/nav_table/Main.vue'
-import Form from './pages/nav_table/Form.vue'
+import Reimburse from './pages/nav_table/Reimburse.vue'
+import NewData from './pages/nav_table/NewData.vue'
+import Form from './pages/nav_table/Letters.vue'
 import AskLeave from './pages/nav_echart/AskLeave.vue'
 import Position from './pages/nav_echart/Position.vue'
 import Title from './pages/nav_echart/Title.vue'
@@ -23,8 +23,8 @@ let routers = [
         name: '财务报表',
         iconCls: 'ios-home',
         children: [
-            { path: '/main', component: Main, name: '最新数据' },
-            { path: '/table', component: Table, name: '报销' },
+            { path: '/newData', component: NewData, name: '最新数据' },
+            { path: '/reimburse', component: Reimburse, name: '报销' },
             { path: '/form', component: Form, name: '加急快报' },
             { path: '/recycle', component: Recycle, name: '垃圾箱' },
         ]

@@ -15,7 +15,7 @@
         height: 100%;
     }
     .carousel-style {
-        width: 70%;
+        width: 65%;
         float: right;
     }
 </style>
@@ -47,7 +47,7 @@
                 </Carousel>
             </div>
             <div style="height: 470px;">
-                <Card style="width:350px">
+                <Card style="width:400px">
                     <p slot="title">
                         <Icon type="ios-film-outline"></Icon>
                         最受员工欢迎电影龙虎榜
