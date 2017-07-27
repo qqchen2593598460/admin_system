@@ -30,6 +30,7 @@
         </Form-item>
     </i-form>
 </template>
+<!--登录接口http://101.200.233.12:8078/user/login.do?userName=moocyq&passWord=000000&platformId=5-->
 <script>
     export default {
         data () {
@@ -37,7 +38,8 @@
                 formLogin: {
                     user: '',
                     password: '',
-                    remember: []
+                    remember: [],
+                    loginUrl: 'http://101.200.233.12:8078/user/login.do?'
                 },
                 formLoginRules: {
                     user: [
@@ -55,8 +57,21 @@
                  this.$refs[name].validate((valid) => {
                          sessionStorage.setItem('user', JSON.stringify(this.formLogin.user));
                          if (valid) {
-                             this.$Message.success('登录成功');
-                             this.$router.push({path: '/newData'});
+                             this.$http.get(this.formLogin.loginUrl + 'userName='
+                                 + this.formLogin.user
+                                 + '&passWord='+this.formLogin.password
+                                 + '&platformId=5').then(response => {
+                                 if(response.body.status === '200'){
+                                     //登录成功
+                                     this.$Message.success('登录成功');
+                                     this.$router.push({path: '/newData'})
+                                 } else {
+                                     this.$Message.error("登录失败");
+                                 }
+                             }, response => {
+                                 //登录失败
+                                 this.$Message.error("登录失败");
+                             });
                          } else {
                              this.$Message.error('登录失败');
                          }
