@@ -21,10 +21,10 @@
         <Form-item class="login-no-bottom">
             <Row>
                 <i-col :xs="{span:4,offset:6}">
-                    <i-button type="primary" @click="handleSubmit('formLogin')">登录</i-button>
+                    <Button type="primary" @click="handleSubmit('formLogin')">登录</Button>
                 </i-col>
                 <i-col :xs="{span:4,offset:6}">
-                    <i-button type="primary" @click="formLoginReset('formLogin')">重置</i-button>
+                    <Button type="primary" @click="formLoginReset('formLogin')">重置</Button>
                 </i-col>
             </Row>
         </Form-item>
