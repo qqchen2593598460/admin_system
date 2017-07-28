@@ -20,7 +20,11 @@ router.beforeEach((to, from, next) => {
         sessionStorage.removeItem('user');
     }
     let user = JSON.parse(sessionStorage.getItem('user'));
-    next();
+    if (user) {
+        next({ path: '/login' })
+    } else {
+        next()
+    }
 });
 
 const vm = new Vue({
